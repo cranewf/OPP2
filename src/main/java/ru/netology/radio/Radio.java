@@ -9,6 +9,20 @@ public class Radio {
     private int maxRadioStationNumber = 9;
     private int maxVolume = 100;
     private int minVolume = 0;
+    private int numberOfRadioStations;
+
+    public Radio(int numberOfRadioStations) {
+        this.numberOfRadioStations = numberOfRadioStations;
+    }
+
+    public Radio() {
+        this.numberOfRadioStations = 10;
+    }
+
+    public int getNumberOfRadioStations() {
+        return numberOfRadioStations;
+    }
+
 
     public int getRadioStationNumber() {
         return radioStationNumber;
