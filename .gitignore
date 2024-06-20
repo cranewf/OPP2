@@ -1,9 +1,16 @@
-target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 .idea/
-target/
+target/generated-sources
+target/generated-test-sources
+target/maven-archiver
+target/maven-status
+target/site
+target/surefire-reports
+target/test-classes
+target/jacoco.exec
+target/OPP2-1.0-SNAPSHOT.jar
 .iml*
 
 ### IntelliJ IDEA ###
