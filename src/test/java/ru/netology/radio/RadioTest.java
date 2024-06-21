@@ -178,4 +178,18 @@ class RadioTest {
         Assertions.assertEquals(10, radio.getNumberOfRadioStations());
     }
 
+    @Test
+    public void settingAboveMaximum() {
+        Radio radio = new Radio(20);
+
+        radio.setNumberOfRadioStations(15);
+
+        int expected = 15;
+        int actual = radio.getNumberOfRadioStations();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+
 }

@@ -12,6 +12,7 @@ public class Radio {
     private int numberOfRadioStations;
 
     public Radio(int numberOfRadioStations) {
+
         this.numberOfRadioStations = numberOfRadioStations;
     }
 
@@ -23,6 +24,9 @@ public class Radio {
         return numberOfRadioStations;
     }
 
+    public void setNumberOfRadioStations(int newNumberOfRadioStations) {
+        this.numberOfRadioStations = newNumberOfRadioStations;
+    }
 
     public int getRadioStationNumber() {
         return radioStationNumber;
