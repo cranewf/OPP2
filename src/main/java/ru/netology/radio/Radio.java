@@ -3,9 +3,7 @@ package ru.netology.radio;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
 @AllArgsConstructor
 @Data
 
@@ -19,6 +17,42 @@ public class Radio {
     private int minVolume = 0;
     private int numberOfRadioStations;
 
+public Radio() {
+   this.numberOfRadioStations = 10;
+}
+    public void nextRadioStationNumber() {
 
+        if (radioStationNumber >= maxRadioStationNumber) {
+            radioStationNumber = 0;
+        } else {
+            setRadioStationNumber(radioStationNumber + 1);
+        }
+    }
+
+    public void prevRadioStationNumber() {
+
+        if (radioStationNumber <= minRadioStationNumber) {
+            radioStationNumber = 9;
+        } else {
+            setRadioStationNumber(radioStationNumber - 1);
+        }
+    }
+
+    public void increaseVolume() {
+        if (volume >= maxVolume) {
+            setVolume(volume);
+        } else {
+            setVolume(volume + 1);
+        }
+
+    }
+
+    public void reducingVolume() {
+        if (volume <= minVolume) {
+            setVolume(volume);
+        } else {
+            setVolume(volume - 1);
+        }
+    }
 
 }
