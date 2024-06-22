@@ -182,13 +182,22 @@ class RadioTest {
     public void settingAboveMaximum() {
         Radio radio = new Radio(20);
 
-        radio.setNumberOfRadioStations(15);
+        radio.setNumberOfRadioStations(20);
 
-        int expected = 15;
+        int expected = 20;
         int actual = radio.getNumberOfRadioStations();
 
         Assertions.assertEquals(expected, actual);
 
+    }
+
+    @Test
+    public void settingAboveHighMaximum() {
+        Radio radio = new Radio(32);
+
+        radio.setNumberOfRadioStations(33);
+
+        Assertions.assertEquals(32, radio.getNumberOfRadioStations());
     }
 
 

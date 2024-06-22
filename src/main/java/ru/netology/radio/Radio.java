@@ -25,7 +25,11 @@ public class Radio {
     }
 
     public void setNumberOfRadioStations(int newNumberOfRadioStations) {
-        this.numberOfRadioStations = newNumberOfRadioStations;
+        if (newNumberOfRadioStations <= numberOfRadioStations) {
+            this.numberOfRadioStations = newNumberOfRadioStations;
+        } else {
+            return;
+        }
     }
 
     public int getRadioStationNumber() {
