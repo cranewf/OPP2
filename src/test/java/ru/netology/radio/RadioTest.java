@@ -175,7 +175,7 @@ class RadioTest {
     public void shouldDefaultNumberOfRadioStations() {
         Radio radio = new Radio();
 
-        Assertions.assertEquals(10, radio.getNumberOfRadioStations());
+        Assertions.assertEquals(9, radio.getNumberOfRadioStations());
     }
 
     @Test
@@ -193,9 +193,9 @@ class RadioTest {
 
     @Test
     public void settingAboveHighMaximum() {
-        Radio radio = new Radio(32);
+        Radio radio = new Radio(20);
 
-        radio.setRadioStationNumber(33);
+        radio.setRadioStationNumber(21);
 
         Assertions.assertEquals(0, radio.getRadioStationNumber());
     }
