@@ -17,9 +17,10 @@ public class Radio {
     private int minVolume = 0;
     private int numberOfRadioStations;
 
-public Radio() {
-   this.numberOfRadioStations = 10;
-}
+    public Radio() {
+        this.numberOfRadioStations = 10;
+    }
+
     public void nextRadioStationNumber() {
 
         if (radioStationNumber >= maxRadioStationNumber) {
