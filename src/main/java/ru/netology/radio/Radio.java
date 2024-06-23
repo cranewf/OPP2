@@ -24,14 +24,6 @@ public class Radio {
         return numberOfRadioStations;
     }
 
-    public void setNumberOfRadioStations(int newNumberOfRadioStations) {
-        if (newNumberOfRadioStations <= numberOfRadioStations) {
-            this.numberOfRadioStations = newNumberOfRadioStations;
-        } else {
-            return;
-        }
-    }
-
     public int getRadioStationNumber() {
         return radioStationNumber;
     }
@@ -45,6 +37,12 @@ public class Radio {
             return;
         }
         if (newRadioStationNumber > maxRadioStationNumber) {
+            return;
+        }
+        if (newRadioStationNumber <= numberOfRadioStations) {
+            radioStationNumber = numberOfRadioStations;
+        }
+        if (newRadioStationNumber > numberOfRadioStations) {
             return;
         }
         radioStationNumber = newRadioStationNumber;
