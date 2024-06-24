@@ -5,11 +5,11 @@ public class Radio {
 
     private int radioStationNumber;
     private int volume;
+    private int numberOfRadioStations;
     private int minRadioStationNumber = 0;
-    private int maxRadioStationNumber = 9;
+    private int maxRadioStationNumber;
     private int maxVolume = 100;
     private int minVolume = 0;
-    private int numberOfRadioStations;
 
     public Radio(int numberOfRadioStations) {
 
@@ -33,16 +33,14 @@ public class Radio {
     }
 
     public void setRadioStationNumber(int newRadioStationNumber) {
-        if (newRadioStationNumber > maxRadioStationNumber && newRadioStationNumber <= numberOfRadioStations) {
-            radioStationNumber = newRadioStationNumber;
-        } else if (newRadioStationNumber > maxRadioStationNumber && newRadioStationNumber > numberOfRadioStations) {
+        maxRadioStationNumber = numberOfRadioStations;
+        if (newRadioStationNumber > maxRadioStationNumber) {
             return;
         }
         if (newRadioStationNumber < minRadioStationNumber) {
             return;
         }
         radioStationNumber = newRadioStationNumber;
-
     }
 
     public void setVolume(int newVolume) {
