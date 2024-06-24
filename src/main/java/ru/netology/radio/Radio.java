@@ -17,7 +17,7 @@ public class Radio {
     }
 
     public Radio() {
-        this.numberOfRadioStations = 9;
+        this.numberOfRadioStations = 10;
     }
 
     public int getNumberOfRadioStations() {
@@ -33,7 +33,7 @@ public class Radio {
     }
 
     public void setRadioStationNumber(int newRadioStationNumber) {
-        maxRadioStationNumber = numberOfRadioStations;
+        maxRadioStationNumber = numberOfRadioStations - 1;
         if (newRadioStationNumber > maxRadioStationNumber) {
             return;
         }
