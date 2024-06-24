@@ -4,11 +4,23 @@ package ru.netology.radio;
 public class Radio {
 
     private int radioStationNumber;
+    private int numberOfRadioStations;
     private int volume;
-    public int minRadioStationNumber = 0;
-    public int maxRadioStationNumber = 9;
-    public int maxVolume = 100;
-    public int minVolume = 0;
+    private int minRadioStationNumber = 0;
+    private int maxVolume = 100;
+    private int minVolume = 0;
+
+    public Radio(int numberOfRadioStations) {
+        this.numberOfRadioStations = numberOfRadioStations;
+    }
+
+    public Radio() {
+        this.numberOfRadioStations = 10;
+    }
+
+    public int getNumberOfRadioStations() {
+        return numberOfRadioStations;
+    }
 
     public int getRadioStationNumber() {
         return radioStationNumber;
@@ -19,28 +31,27 @@ public class Radio {
     }
 
     public void setRadioStationNumber(int newRadioStationNumber) {
-        if (newRadioStationNumber < minRadioStationNumber) {
+        if (newRadioStationNumber > numberOfRadioStations - 1) {
             return;
         }
-        if (newRadioStationNumber > maxRadioStationNumber) {
+        if (newRadioStationNumber < minRadioStationNumber) {
             return;
         }
         radioStationNumber = newRadioStationNumber;
     }
 
     public void setVolume(int newVolume) {
-        if (newVolume < minVolume) {
+        if (newVolume > maxVolume) {
             return;
         }
-        if (newVolume > maxVolume) {
+        if (newVolume < minVolume) {
             return;
         }
         volume = newVolume;
     }
 
     public void nextRadioStationNumber() {
-
-        if (radioStationNumber >= maxRadioStationNumber) {
+        if (radioStationNumber >= numberOfRadioStations - 1) {
             radioStationNumber = 0;
         } else {
             setRadioStationNumber(radioStationNumber + 1);
@@ -48,7 +59,6 @@ public class Radio {
     }
 
     public void prevRadioStationNumber() {
-
         if (radioStationNumber <= minRadioStationNumber) {
             radioStationNumber = 9;
         } else {
